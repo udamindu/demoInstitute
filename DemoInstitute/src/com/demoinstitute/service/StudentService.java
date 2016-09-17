@@ -113,7 +113,7 @@ public class StudentService {
         }
     }
 
-    public static void listStudentsFollowingCourseNAN(String courseID) {
+    public static void listStudentsFollowingCourse(String courseID) {
 
         Transaction tx = null;
         Session session = SessionFactoryUtil.getCurrentSession();
