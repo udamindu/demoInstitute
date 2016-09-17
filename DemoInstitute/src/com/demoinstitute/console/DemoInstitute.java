@@ -24,8 +24,7 @@ public class DemoInstitute {
     public static void main(String[] args) {
         // TODO code application logic here
         
-        //***Requirement 09***
-        //---------Student 1-------------------------
+        //-----  09 -----
         Student student1 = new Student();
         student1.setNicNo("927656351V");
         student1.setRegistrationId("DIT-13-M1-0056");
@@ -42,9 +41,8 @@ public class DemoInstitute {
         student1.setAddress(student1Address);
 
         StudentService.createStudent(student1);
-        //-------------------------------------------
 
-        //---------Student 2-------------------------
+        
         Student student2 = new Student();
         student2.setNicNo("936724590V");
         student2.setRegistrationId("DIT-14-M1-0023");
@@ -61,9 +59,8 @@ public class DemoInstitute {
         student2.setAddress(student2Address);
 
         StudentService.createStudent(student2);
-        //-------------------------------------------
 
-        //---------Student 3-------------------------
+        
         Student student3 = new Student();
         student3.setNicNo("854524340V");
         student3.setRegistrationId("DIT-06-M1-0010");
@@ -80,9 +77,8 @@ public class DemoInstitute {
         student3.setAddress(student3Address);
 
         StudentService.createStudent(student3);
-        //-------------------------------------------
 
-        //---------Student 4-------------------------
+        
         Student student4 = new Student();
         student4.setNicNo("903476126V");
         student4.setRegistrationId("DIT-11-M1-0009");
@@ -99,10 +95,9 @@ public class DemoInstitute {
         student4.setAddress(student4Address);
 
         StudentService.createStudent(student4);
-        //--------------------------------------------
 
-        //***Requirement 10***
-        //---------Lecturer 1-------------------------
+        //----- 10 -----
+        
         Lecturer lecturer1 = new Lecturer();
         lecturer1.setNicNo("401782987V");
         lecturer1.setSpecialities("Martial Arts");
@@ -119,9 +114,8 @@ public class DemoInstitute {
         lecturer1.setAddress(lecturer1Address);
 
         LecturerService.createLecturer(lecturer1);
-        //--------------------------------------------
 
-        //---------Lecturer 2-------------------------
+        
         Lecturer lecturer2 = new Lecturer();
         lecturer2.setNicNo("541084368V");
         lecturer2.setSpecialities("Homicide Detective");
@@ -138,80 +132,66 @@ public class DemoInstitute {
         lecturer2.setAddress(lecturer2Address);
 
         LecturerService.createLecturer(lecturer2);
-        //--------------------------------------------
+        
 
-        //***Requirement 11***
-        //---------Course 1---------------------------
+        //----- 11 -----
+        
         Course course1 = new Course();
         course1.setCourseId("MA-SHKU");
         course1.setCourseName("Shaolin Kung Fu");
         course1.setCourseDuration(100);
 
         CourseService.createCourse(course1);
-        //--------------------------------------------
 
-        //---------Course 2---------------------------
+        
         Course course2 = new Course();
         course2.setCourseId("MA-WUSH");
         course2.setCourseName("Wushu");
         course2.setCourseDuration(80);
 
         CourseService.createCourse(course2);
-        //--------------------------------------------
 
-        //---------Course 3---------------------------
+        
         Course course3 = new Course();
         course3.setCourseId("HO-INVE");
         course3.setCourseName("Homicide Investigation");
         course3.setCourseDuration(60);
 
         CourseService.createCourse(course3);
-        //--------------------------------------------
+        
 
-        //***Requirement 12***
-        //Assigning Lecturer 1 for Course 1
+        //***----- 12 -----
+        
         course1.setConductedLecturer(lecturer1);
         CourseService.updateCourse(course1);
 
-        //Assigning Lecturer 1 for Course 2
         course2.setConductedLecturer(lecturer1);
         CourseService.updateCourse(course2);
 
-        //Assigning Lecturer 2 for Course 3
         course3.setConductedLecturer(lecturer2);
         CourseService.updateCourse(course3);
 
-        //***Requirement 13***
-        //Assigning Student 1 for Course 1
+        //----- 13 -----
+        
         student1.getListOfCourses().add(course1);
 
-        //Assigning Student 2 for Course 1
         student2.getListOfCourses().add(course1);
 
-        //Assigning Student 2 for Course 2
         student2.getListOfCourses().add(course2);
 
-        //Assigning Student 3 for Course 3
         student3.getListOfCourses().add(course3);
 
-        //Assigning Student 4 for Course 3
         student4.getListOfCourses().add(course3);
-
-        //Assigning Student 4 for Course 1
+        
         student4.getListOfCourses().add(course1);
 
-        //Persisting classes
         StudentService.updateStudent(student1);
         StudentService.updateStudent(student2);
         StudentService.updateStudent(student3);
         StudentService.updateStudent(student4);
 
-        //***Requirement 14***
-        //Listing students who follow the course "MA-SHKU"
+        //----- 14 -----
         StudentService.listStudentsFollowingCourse("MA-SHKU");
 
-//        StudentService.listStudents();
-//        LecturerService.listLecturers();
-//        CourseService.listCourses();
     }
 }
