@@ -15,7 +15,7 @@ import javax.persistence.*;
 
 @Entity(name = "LECTURER_TAB")
 @Table(name = "LECTURER_TAB")
-public class Lecturer {
+public class Lecturer extends Person{
     
     private String specialities;
     private Set<Course> listOfCourses = new HashSet<>();
