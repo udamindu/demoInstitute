@@ -133,7 +133,7 @@ public class StudentService {
 
             if (!students.isEmpty()) {
                 System.out.println(" ");
-                System.out.println("*** List of the Students enrolled for Course - " + courseID + " ***");
+                System.out.println("*** Students who are following course " + courseID + " ***");
                 System.out.println("*** Start ***");
                 for (Iterator iter = students.iterator(); iter.hasNext();) {
                     Student element = (Student) iter.next();
